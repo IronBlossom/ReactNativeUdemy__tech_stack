@@ -1,3 +1,5 @@
+#go to: https://stephengrider.github.io/JSPlaygrounds/
+
 const reducer = (state = [], action) => {
   if(action.type === 'split_string') {
     return action.payload.split('');
