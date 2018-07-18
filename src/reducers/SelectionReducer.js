@@ -1,3 +1,6 @@
-export default () => 
+export default (state, action) => {
     // default value cannot be 'undefined'
-     null;
+    console.log(action);
+    return null;
+};
+
