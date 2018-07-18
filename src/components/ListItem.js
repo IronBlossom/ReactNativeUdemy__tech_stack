@@ -3,6 +3,8 @@ import {
     Text,
     TouchableWithoutFeedback,
     View,
+    UIManager,
+    Platform,
     LayoutAnimation,
 } from 'react-native';
 import { connect } from 'react-redux';
@@ -10,9 +12,13 @@ import { CardSection } from './common';
 import * as actions from '../actions';
 
 class ListItem extends Component {
-    
+
     componentWillUpdate() {
-            LayoutAnimation.spring();
+        if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
+            UIManager.setLayoutAnimationEnabledExperimental(true);
+        }
+
+        LayoutAnimation.spring();
     }
 
     renderDescription() {
