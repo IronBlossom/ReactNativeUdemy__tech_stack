@@ -20,7 +20,8 @@ class LibraryList extends Component {
         return (
             <ListView
                 dataSource={this.DataSource}
-                renderRow={this.renderRow} />
+                renderRow={this.renderRow} 
+            />
         );
     }
 }
